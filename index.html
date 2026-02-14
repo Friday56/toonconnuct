@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>ton connect test</title>
+
+  <!-- TON Connect UI -->
+  <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+
+  <style>
+    body {
+      background: #d3d3d3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ton connect test</h1>
+
+  <div id="ton-connect"></div>
+
+  <script>
+    const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+      manifestUrl: "https://YOUR-RENDER-DOMAIN/tonconnect-manifest.json"
+    });
+
+    tonConnectUI.renderButton("#ton-connect");
+  </script>
+
+</body>
+</html>
