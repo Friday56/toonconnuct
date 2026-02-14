@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>ton connect test</title>
 
+  <!-- Telegram WebApp API -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
   <!-- TON Connect UI -->
   <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
 
@@ -28,17 +31,19 @@
 
   <h1>ton connect test</h1>
 
-  <!-- ВОТ ТУТ ПОЯВИТСЯ КНОПКА -->
   <div id="ton-connect"></div>
 
   <script>
+    // Telegram Mini App инициализация
+    window.Telegram.WebApp.ready();
+
+    // TON Connect UI
     const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
       manifestUrl: "https://toonconnuct.onrender.com/tonconnect-manifest.json"
     });
 
-    // РЕНДЕРИМ КНОПКУ
     tonConnectUI.renderButton("#ton-connect");
   </script>
 
 </body>
-  </html>
+</html>
