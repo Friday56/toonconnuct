@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>ton connect test</title>
 
-  <!-- Telegram WebApp API -->
+  <!-- Telegram WebApp API (не мешает браузеру) -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
   <!-- TON Connect UI -->
@@ -31,18 +31,28 @@
 
   <h1>ton connect test</h1>
 
+  <!-- Кнопка появится здесь -->
   <div id="ton-connect"></div>
 
   <script>
-    // Telegram Mini App инициализация
-    window.Telegram.WebApp.ready();
+    // Безопасная инициализация Telegram API
+    if (window.Telegram && window.Telegram.WebApp) {
+      window.Telegram.WebApp.ready();
+    }
 
-    // TON Connect UI
+    // Инициализация TON Connect UI
     const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
       manifestUrl: "https://toonconnuct.onrender.com/tonconnect-manifest.json"
     });
 
-    tonConnectUI.renderButton("#ton-connect");
+    // Принудительный рендер кнопки (работает везде)
+    tonConnectUI.renderButton("#ton-connect", {
+      style: {
+        theme: "light",
+        borderRadius: "12px",
+        bgColor: "#ffffff"
+      }
+    });
   </script>
 
 </body>
