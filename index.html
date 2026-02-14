@@ -31,15 +31,13 @@
   <div id="ton-connect"></div>
 
   <script>
-    // Отключаем проверку окружения (iframe, Telegram, браузер)
+    // Отключаем ВСЕ проверки окружения (iframe, WebView, Telegram)
     window.__TON_CONNECT_UI_DISABLE_ENV_CHECK__ = true;
 
-    // Инициализация TON Connect UI
     const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
       manifestUrl: "https://toonconnuct.onrender.com/tonconnect-manifest.json"
     });
 
-    // Принудительный рендер кнопки
     tonConnectUI.renderButton("#ton-connect", {
       style: {
         theme: "light",
